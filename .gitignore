@@ -8,3 +8,5 @@ yarn-error.log
 vendor
 
 CHANGELOG\.md
+
+\.idea/

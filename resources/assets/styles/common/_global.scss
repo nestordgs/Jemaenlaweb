@@ -1,0 +1,36 @@
+.center-table {
+  display: table;
+  margin: 20px 0;
+  height: 200px;
+  @media (min-width: $screen-sm) {
+    @include size(auto, 220px);
+    margin: 20px;
+  }
+  @media (min-width: $screen-md) {
+    @include size(auto, 350px);
+  }
+}
+.center-table p {
+  display: table-cell;
+  margin: 0;
+  color: white;
+  font-size: 3.5rem;
+  border-radius: 50%;
+  @media (min-width: $screen-md) {
+    font-size: 5.8rem;
+  }
+  vertical-align: middle;
+  &.reg {
+    line-height: normal;
+  }
+  &.bg-shadow {
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#28343b+1,ebe8ff+100 */
+    background: rgb(40,52,59); /* Old browsers */
+    background: -moz-radial-gradient(center, circle cover, rgba(40, 52, 59, 0.10) 1%, rgba(255, 255, 255, 0.01) 70%); /* FF3.6-15 */
+    background: -webkit-radial-gradient(center, circle cover, rgba(40, 52, 59, 0.10) 1%,rgba(255, 255, 255, 0.01) 70%); /* Chrome10-25,Safari5.1-6 */
+    background: radial-gradient(circle at center, rgba(40, 52, 59, 0.10) 1%, rgba(255, 255, 255, 0.01) 70%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#28343b', endColorstr='#ebe8ff',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+  }
+}
+
+@include text-emphasis-variant('.text-purple', $brand-purple);

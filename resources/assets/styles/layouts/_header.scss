@@ -1,6 +1,168 @@
-.banner .nav li {
-  @extend .nav-item;
+.bg-picture {
+  background-size: cover;
+  background: no-repeat fixed;
+  & .pad-15 {
+    padding-top: 15px;
+  }
+  .username {
+    color: $username;
+    font-style: italic;
+    @media (min-width: $screen-md) {
+      font-size: 30px;
+    }
+  }
 }
-.banner .nav a {
-  @extend .nav-link;
+.navbar {
+  margin-bottom: 0;
+}
+.navbar-brand {
+  padding: 3px 10px;
+  @media (max-width: $screen-md ) {
+    padding: 3px 2px;
+  }
+  @media (max-width: $screen-xs ) {
+    position: absolute;
+  }
+  > img {
+    width: 60%;
+  }
+}
+
+.navbar-purple {
+  border-radius: 0;
+  background-color: $navbar-purple-bg;
+  border-color: $navbar-purple-border;
+
+  .navbar-brand {
+    color: $navbar-purple-brand-color;
+    &:hover,
+    &:focus {
+      color: $navbar-purple-brand-hover-color;
+      background-color: $navbar-purple-brand-hover-bg;
+    }
+  }
+
+  .navbar-text {
+    color: $navbar-purple-color;
+  }
+
+  .navbar-nav {
+    > li > a {
+      color: $navbar-purple-link-color;
+
+      &:hover,
+      &:focus {
+        color: $navbar-purple-link-hover-color;
+        background-color: $navbar-purple-link-hover-bg;
+        transition: all .3s linear;
+      }
+    }
+    > .active > a {
+      &,
+      &:hover,
+      &:focus {
+        color: $navbar-purple-link-active-color;
+        background-color: $navbar-purple-link-active-bg;
+      }
+    }
+    > .disabled > a {
+      &,
+      &:hover,
+      &:focus {
+        color: $navbar-purple-link-disabled-color;
+        background-color: $navbar-purple-link-disabled-bg;
+      }
+    }
+  }
+
+  // Darken the responsive nav toggle
+  .navbar-toggle {
+    border-color: $navbar-purple-toggle-border-color;
+    background-color: $brand-menu-hover;
+    @media (max-width: $screen-xs ) {
+      z-index: 1;
+    }
+    &:hover,
+    &:focus {
+      background-color: $navbar-purple-toggle-hover-bg;
+    }
+    .icon-bar {
+      background-color: $navbar-purple-toggle-icon-bar-bg;
+    }
+  }
+
+  .navbar-collapse,
+  .navbar-form {
+    border-color: darken($navbar-purple-bg, 7%);
+  }
+
+  // Dropdowns
+  .navbar-nav {
+    > .open > a {
+      &,
+      &:hover,
+      &:focus {
+        background-color: $navbar-purple-link-active-bg;
+        color: $navbar-purple-link-active-color;
+      }
+    }
+
+    @media (max-width: $grid-float-breakpoint-max) {
+      // Dropdowns get custom display
+      .open .dropdown-menu {
+        > .dropdown-header {
+          border-color: $navbar-purple-border;
+        }
+        .divider {
+          background-color: $navbar-purple-border;
+        }
+        > li > a {
+          color: $navbar-purple-link-color;
+          &:hover,
+          &:focus {
+            color: $navbar-purple-link-hover-color;
+            background-color: $navbar-purple-link-hover-bg;
+          }
+        }
+        > .active > a {
+          &,
+          &:hover,
+          &:focus {
+            color: $navbar-purple-link-active-color;
+            background-color: $navbar-purple-link-active-bg;
+          }
+        }
+        > .disabled > a {
+          &,
+          &:hover,
+          &:focus {
+            color: $navbar-purple-link-disabled-color;
+            background-color: $navbar-purple-link-disabled-bg;
+          }
+        }
+      }
+    }
+  }
+
+  .navbar-link {
+    color: $navbar-purple-link-color;
+    &:hover {
+      color: $navbar-purple-link-hover-color;
+    }
+  }
+
+  .btn-link {
+    color: $navbar-purple-link-color;
+    &:hover,
+    &:focus {
+      color: $navbar-purple-link-hover-color;
+    }
+    &[disabled],
+    fieldset[disabled] & {
+      &:hover,
+      &:focus {
+        color: $navbar-purple-link-disabled-color;
+      }
+    }
+  }
 }

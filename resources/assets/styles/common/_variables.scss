@@ -1,2 +1,65 @@
 // Colors
-$brand-primary:         #27ae60;
+
+$gray-base:              #000 !default;
+$gray-darker:            lighten($gray-base, 13.5%) !default; // #222
+$gray-dark:              lighten($gray-base, 20%) !default;   // #333
+$gray:                   lighten($gray-base, 33.5%) !default; // #555
+$gray-light:             lighten($gray-base, 46.7%) !default; // #777
+$gray-lighter:           lighten($gray-base, 93.5%) !default; // #eee
+
+//$brand-primary:         #27ae60;
+$brand-purple:          #690462 !default;
+$brand-purple-2:        #d321d1 !default;
+$brand-menu-hover:      #dbd2da !default;
+
+//** Global textual link color.
+//$link-color:            $brand-primary;
+//** Link hover color set via `darken()` function.
+//$link-hover-color:      $brand-primary;
+//** Link hover decoration.
+$link-hover-decoration: none !default;
+
+//  Button Purple
+$btn-purple-color:              #fff !default;
+$btn-purple-bg:                 $brand-purple-2 !default;
+$btn-purple-border:             darken($btn-purple-bg, 5%) !default;
+
+// Navbar Purple
+$navbar-purple-color:                       lighten($gray-light, 15%) !default;
+$navbar-purple-bg:                          $brand-purple !default;
+$navbar-purple-border:                      darken($navbar-purple-bg, 10%) !default;
+
+// Inverted navbar links
+$navbar-purple-link-color:                 lighten(#fff, 15%) !default;
+$navbar-purple-link-hover-color:           darken($navbar-purple-bg, 10%) !default;
+$navbar-purple-link-hover-bg:              $brand-menu-hover !default;
+$navbar-purple-link-active-color:          $navbar-purple-link-hover-color !default;
+$navbar-purple-link-active-bg:             $brand-menu-hover !default;
+$navbar-purple-link-disabled-color:        #444 !default;
+$navbar-purple-link-disabled-bg:           transparent !default;
+
+// Inverted navbar brand label
+$navbar-purple-brand-color:                $navbar-purple-link-color !default;
+$navbar-purple-brand-hover-color:          #fff !default;
+$navbar-purple-brand-hover-bg:             transparent !default;
+
+// Inverted navbar toggle
+$navbar-purple-toggle-hover-bg:            $brand-menu-hover !default;
+$navbar-purple-toggle-icon-bar-bg:         #333 !default;
+$navbar-purple-toggle-border-color:        $brand-menu-hover !default;
+
+// Regular Font
+$regular-font-path:        "../fonts" !default;
+$regular-font-size-base:   14px !default;
+$regular-line-height-base: 1 !default;
+$regular-css-prefix:       reg !default;
+$regular-version:          "1.0" !default;
+
+// Regular Font
+$helvetica-font-path:        "../fonts" !default;
+$helvetica-font-size-base:   14px !default;
+$helvetica-line-height-base: 1 !default;
+$helvetica-css-prefix:       helve !default;
+$helvetica-version:          "1.0" !default;
+
+$username: #2a4b78;

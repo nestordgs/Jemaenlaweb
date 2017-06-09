@@ -1,0 +1,11 @@
+@font-face {
+  font-family: 'PacificoRegular';
+  src: url('#{$regular-font-path}/Pacifico.ttf?v=#{$regular-version}') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+.#{$regular-css-prefix} {
+  display: inline-block;
+  font: normal normal normal #{$regular-font-size-base}/#{$regular-line-height-base} PacificoRegular; // shortening font declaration
+  font-size: inherit; // can't have font-size inherit on line above, so need to override
+}

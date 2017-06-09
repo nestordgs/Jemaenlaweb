@@ -1,15 +1,17 @@
 @import "common/variables";
+@import "common/mixins/font-face";
 
 // Import npm dependencies
 @import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
 @import "node_modules/font-awesome/scss/font-awesome";
 
-// @import "common/global";
-// @import "components/buttons";
+@import "common/global";
+@import "components/buttons";
+@import "components/fonts";
 // @import "components/comments";
 // @import "components/forms";
 // @import "components/wp-classes";
-// @import "layouts/header";
+@import "layouts/header";
 @import "layouts/sidebar";
 @import "layouts/footer";
 @import "layouts/pages";
