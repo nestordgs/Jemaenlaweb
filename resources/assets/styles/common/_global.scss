@@ -1,3 +1,19 @@
+.pad {
+  &-top-15 {
+    padding-top: 15px;
+  }
+  &-btn-15 {
+    padding-bottom: 15px;
+  }
+}
+@media (min-width: $screen-md) {
+  .vertical-align {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+  }
+}
 .center-table {
   display: table;
   margin: 20px 0;
@@ -24,13 +40,27 @@
     line-height: normal;
   }
   &.bg-shadow {
-    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#28343b+1,ebe8ff+100 */
-    background: rgb(40,52,59); /* Old browsers */
-    background: -moz-radial-gradient(center, circle cover, rgba(40, 52, 59, 0.10) 1%, rgba(255, 255, 255, 0.01) 70%); /* FF3.6-15 */
-    background: -webkit-radial-gradient(center, circle cover, rgba(40, 52, 59, 0.10) 1%,rgba(255, 255, 255, 0.01) 70%); /* Chrome10-25,Safari5.1-6 */
-    background: radial-gradient(circle at center, rgba(40, 52, 59, 0.10) 1%, rgba(255, 255, 255, 0.01) 70%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#28343b', endColorstr='#ebe8ff',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+    background: radial-gradient(circle at center, rgba(40, 52, 59, 0.10) 1%, rgba(255, 255, 255, 0.01) 70%);
   }
 }
 
 @include text-emphasis-variant('.text-purple', $brand-purple);
+@include text-emphasis-variant('.text-gray', $brand-gray);
+@include text-emphasis-variant('.text-gray-dark', $brand-gray-dark);
+@include text-emphasis-variant('.text-purple-2', $brand-purple-2);
+
+.fa-stack {
+  @media (min-width: $screen-sm) {
+    &.fa-rest {
+      font-size: 3rem;
+    }
+  }
+  @media (min-width: $screen-md) {
+    &.fa-rest {
+      font-size: 4rem;
+    }
+  }
+}
+.bg-dark-gray {
+  background-color: #e3e3e3;
+}
