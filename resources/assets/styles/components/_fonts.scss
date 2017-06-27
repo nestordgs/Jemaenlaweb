@@ -6,6 +6,23 @@
 }
 .#{$regular-css-prefix} {
   display: inline-block;
-  font: normal normal normal #{$regular-font-size-base}/#{$regular-line-height-base} PacificoRegular; // shortening font declaration
-  font-size: inherit; // can't have font-size inherit on line above, so need to override
+  font: normal normal normal #{$regular-font-size-base}/#{$regular-line-height-base} PacificoRegular;
+  font-size: inherit;
+}
+
+.fa-stack {
+  &.fa-gradient {
+    background: radial-gradient(circle at center, rgba(238,238,238,1) 0%,rgba(204,204,204,1) 100%);
+    &.rrss:hover {
+      background: $brand-purple-2;
+      transition: background .3s linear;
+      .fa.text-gray {
+        color: white;
+        transition: color .3s linear;
+      }
+    }
+  }
+  &.fa-radius {
+    border-radius: 50px;
+  }
 }

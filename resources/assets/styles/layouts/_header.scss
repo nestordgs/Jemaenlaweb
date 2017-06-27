@@ -1,9 +1,6 @@
 .bg-picture {
   background-size: cover;
   background: no-repeat fixed;
-  & .pad-15 {
-    padding-top: 15px;
-  }
   .username {
     color: $username;
     font-style: italic;
@@ -163,6 +160,49 @@
       &:focus {
         color: $navbar-purple-link-disabled-color;
       }
+    }
+  }
+}
+
+ul.social {
+  .instagram {
+    .fa {
+      @extend .fa-instagram;
+    }
+  }
+  .facebook {
+    .fa {
+      @extend .fa-facebook;
+    }
+  }
+  .twitter {
+    .fa {
+      @extend .fa-twitter;
+    }
+  }
+  .pinterest {
+    .fa {
+      @extend .fa-pinterest-p;
+    }
+  }
+  .linkedin {
+    .fa {
+      @extend .fa-linkedin;
+    }
+  }
+  .youtube {
+    .fa {
+      @extend .fa-youtube;
+    }
+  }
+  .behance {
+    .fa {
+      @extend .fa-behance;
+    }
+  }
+  .snapchat {
+    .fa {
+      @extend .fa-snapchat-ghost;
     }
   }
 }
