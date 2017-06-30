@@ -157,7 +157,6 @@ function customize_register( $wp_customize ) {
 			'label'    => __( 'Username', 'textdomain' ),
 		)
 	);
-
 	/**
 	 * About Me Section
 	 */
@@ -346,6 +345,141 @@ function customize_register( $wp_customize ) {
 				'description' => __('Se puede utilizar el caracter "|"(pipe) para realizar saltos de linea'),
 			)
 		);
+	/**
+	 * Subscripcion
+	 */
+	$wp_customize->add_section(
+		'subscripcion_home_page', array(
+			'title'    => __( 'Subscripción', 'theme' ),
+			'priority' => 1,
+			'panel'    => 'theme_options'
+		)
+	);
+		/**
+		 * Type Video
+		 */
+		$wp_customize->add_setting(
+			'type_video', array(
+				'default' => '',
+				'type' => 'theme_mod',
+			)
+		);
+		$wp_customize->add_control(
+			'type_video', array(
+				'type' => 'radio',
+				'section' => 'subscripcion_home_page',
+				'label' => __( 'Tipo de Video' ),
+				'description' => __( 'Seleccione el tipo de video' ),
+				'priority' => 0,
+				'choices' => array(
+					'1' => __( 'Youtube' ),
+					'2' => __( 'Vimeo' ),
+				),
+			)
+		);
+		/**
+		 * Video Youtube
+		 */
+		$wp_customize->add_setting(
+			'link_video_subscripcion', array(
+				'default'           => '',
+				'type'              => 'theme_mod',
+				'capability'        => 'edit_theme_options',
+				'transport'         => '',
+				'sanitize_callback' => 'esc_textarea',
+			)
+		);
+		$wp_customize->add_control(
+			'link_video_subscripcion', array(
+				'type'     => 'text',
+				'priority' => 1,
+				'section'  => 'subscripcion_home_page',
+				'label'    => __( 'Link Video de Youtube', 'textdomain' ),
+			)
+		);
+	/**
+	 * Testimony
+	 */
+	$wp_customize->add_section(
+		'testimony_home_page', array(
+			'title'    => __( 'Testimonios', 'theme' ),
+			'priority' => 1,
+			'panel'    => 'theme_options'
+		)
+	);
+		/**
+		 * Carousel Options
+		 */
+			/**
+			 * draggable
+			 */
+			$wp_customize->add_setting(
+				'draggable', array(
+					'default'    => '',
+					'capability' => 'edit_theme_options',
+					'type'       => 'theme_mod',
+				)
+			);
+			$wp_customize->add_control(
+				'draggable', array(
+					'type'        => 'checkbox',
+					'section'     => 'testimony_home_page',
+					'label'       => __( 'Se puede arrastrar el Carousel?' ),
+					'description' => __( 'En caso de querer pasar el contenido arrastrando el carousel.' ),
+					'priority'    => 0,
+				)
+			);
+			/**
+			 * autoplaySpeed
+			 */
+			$wp_customize->add_setting(
+				'autoplaySpeed', array(
+					'default' => 3000,
+					'type'    => 'theme_mod',
+				)
+			);
+			$wp_customize->add_control(
+				'autoplaySpeed', array(
+					'type'     => 'numeric',
+					'section'  => 'testimony_home_page',
+					'label'    => __( 'Velocidad de reproducción automática' ),
+					'priority' => 0,
+				)
+			);
+			/**
+			 * slidesToShow
+			 */
+			$wp_customize->add_setting(
+				'slidesToShow', array(
+					'default' => 16,
+					'type'    => 'theme_mod',
+				)
+			);
+			$wp_customize->add_control(
+				'slidesToShow', array(
+					'type'     => 'numeric',
+					'section'  => 'testimony_home_page',
+					'label'    => __( 'Testimonios para mostrar' ),
+					'priority' => 0,
+				)
+			);
+			/**
+			 * slidesToScroll
+			 */
+			$wp_customize->add_setting(
+				'slidesToScroll', array(
+					'default' => 1,
+					'type'    => 'theme_mod',
+				)
+			);
+			$wp_customize->add_control(
+				'slidesToScroll', array(
+					'type'     => 'numeric',
+					'section'  => 'testimony_home_page',
+					'label'    => __( 'Testimonios para desplazarse' ),
+					'priority' => 0,
+				)
+			);
 }
 
 add_action( 'customize_register', __NAMESPACE__ . '\\customize_register' );

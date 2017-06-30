@@ -6,4 +6,6 @@
 @section('content')
     @include('partials.home.header-home')
     @include('partials.home.about-me')
+    @include('partials.home.subscription')
+    @include('partials.home.testimony')
 @endsection

@@ -2,3 +2,15 @@
   background: url('http://jema.dev/wp-content/uploads/2017/06/aboutme-bg.png') no-repeat fixed;
   background-size: 75%;
 }
+.bg-dark-gray {
+  background-color: #e3e3e3;
+}
+.iframe-video {
+  height: 215px;
+  @media (min-width: $screen-sm) {
+    height: 255px;
+  }
+  @media (min-width: $screen-md) {
+    height: 315px;
+  }
+}

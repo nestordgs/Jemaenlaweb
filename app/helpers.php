@@ -111,3 +111,18 @@ function title()
     }
     return get_the_title();
 }
+
+function getVideoUrl($type, $link) {
+	if ($type == 1) {
+		if ( strpos( $link, 'youtube') !== false ) {
+			parse_str( parse_url( $link, PHP_URL_QUERY ), $id );
+			return 'https://www.youtube.com/embed/' . $id['v'];
+		}
+	}
+	if ($type == 2) {
+		if ( strpos( $link, 'vimeo') !== false ) {
+			return 'https://player.vimeo.com/video/' . (int) substr(parse_url( $link, PHP_URL_PATH), 1);
+		}
+	}
+	return "Debe seleccionar el tipo de video correspondiente al enlace";
+}
