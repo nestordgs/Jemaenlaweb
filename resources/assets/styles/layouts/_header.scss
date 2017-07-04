@@ -54,7 +54,10 @@
         transition: all .3s linear;
       }
     }
-    > .active > a {
+    > .current-menu-item > a {
+      color: $navbar-purple-link-active-color;
+    }
+    > .current-menu-item, .active > a {
       &,
       &:hover,
       &:focus {
@@ -121,7 +124,7 @@
             background-color: $navbar-purple-link-hover-bg;
           }
         }
-        > .active > a {
+        > .current-menu-item, .active > a {
           &,
           &:hover,
           &:focus {
@@ -203,6 +206,18 @@ ul.social {
   .snapchat {
     .fa {
       @extend .fa-snapchat-ghost;
+    }
+  }
+  &.purple {
+    & .fa-gradient {
+      &:hover {
+        background: $brand-purple-2;
+        transition: all .3s linear;
+        & .fa {
+          transition: all .3s linear;
+          @extend .fa-inverse;
+        }
+      }
     }
   }
 }

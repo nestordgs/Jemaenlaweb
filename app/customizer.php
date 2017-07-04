@@ -480,6 +480,40 @@ function customize_register( $wp_customize ) {
 					'priority' => 0,
 				)
 			);
+			/**
+			 * Text 1
+			 */
+			$wp_customize->add_setting(
+				'text_1', array(
+					'default' => 'Say Hi & Get in Touch',
+					'type'    => 'theme_mod',
+				)
+			);
+			$wp_customize->add_control(
+				'text_1', array(
+					'type'     => 'text',
+					'section'  => 'testimony_home_page',
+					'label'    => __( 'Texto Uno' ),
+					'priority' => 0,
+				)
+			);
+			/**
+			 * Text 2
+			 */
+			$wp_customize->add_setting(
+				'text_2', array(
+					'default' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit suspendisse',
+					'type'    => 'theme_mod',
+				)
+			);
+			$wp_customize->add_control(
+				'text_2', array(
+					'type'     => 'text',
+					'section'  => 'testimony_home_page',
+					'label'    => __( 'Texto Dos' ),
+					'priority' => 0,
+				)
+			);
 }
 
 add_action( 'customize_register', __NAMESPACE__ . '\\customize_register' );

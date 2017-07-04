@@ -1,5 +1,5 @@
 {{-- Created by Nestor on 6/22/2017. --}}
-<div class="about-me-bg">
+<div class="about-me-bg pad-top-15" id="sobreMi">
     <div class="container">
         <div class="row vertical-align pad-top-15">
             <div class="col-xs-12 col-sm-6">

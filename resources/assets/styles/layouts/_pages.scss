@@ -14,3 +14,39 @@
     height: 315px;
   }
 }
+@media (min-width: $screen-md) {
+  .carousel-slick {
+    &[data-show] {
+      .img-carousel-slick {
+        max-width: 100px !important;
+        max-height: 100px !important;
+      }
+    }
+  }
+}
+figure {
+  margin: 0;
+  position: relative;
+  figcaption {
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    text-align: center;
+    backface-visibility: hidden;
+    transition: transform 0.3s, opacity 0.3s;
+  }
+  figcaption {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 20px;
+    //background: #2c3f52;
+    //background: rgba(105, 4, 98, 0.5);
+    background-color: fade_out($brand-purple, 0.4);
+  }
+  &:hover {
+    figcaption {
+      opacity: 1;
+    }
+  }
+}

@@ -9,12 +9,20 @@
                 </p>
                 <form action="#">
                     <div class="form-group">
-                        <label for="name">Nombre</label>
-                        <input type="text" id="name" name="name" class="form-control input-sm">
+                        <span class="input input-jema">
+                            <input class="input-field input-field-jema" type="text" id="input-4" />
+                            <label class="input-label input-label-jema input-label-jema-color" for="input-4">
+                                <span class="input-label-content input-label-content-jema">Nombre</span>
+                            </label>
+                        </span>
                     </div>
                     <div class="form-group">
-                        <label for="email">Correo Electrónico</label>
-                        <input type="email" name="email" id="email" class="form-control input-sm">
+                        <span class="input input-jema">
+                            <input class="input-field input-field-jema" type="text" id="input-4" />
+                            <label class="input-label input-label-jema input-label-jema-color" for="input-4">
+                                <span class="input-label-content input-label-content-jema">Correo Electrónico</span>
+                            </label>
+                        </span>
                     </div>
                     <p class="text-right">
                         <button class="btn btn-sm btn-purple" type="button">

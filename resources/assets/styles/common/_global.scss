@@ -65,12 +65,13 @@
   display: none !important;
 }
 .slick-prev, .slick-next {
-  color: #fff !important;
-  background-color: #337ab7 !important;
-  border-color: #2e6da4 !important;
+  @extend .btn-purple;
   width: 30px;
   height: 30px;
   border-radius: 50%;
+  &:before {
+    line-height: 1.6;
+  }
   @media (max-width: $screen-sm) {
     display: none !important;
   }
@@ -80,4 +81,8 @@
 }
 .slick-next {
   right: -45px;
+}
+.firma-soluciones {
+  height: 20px;
+  display: inline;
 }

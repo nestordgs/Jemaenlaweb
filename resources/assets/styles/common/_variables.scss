@@ -14,11 +14,15 @@ $brand-menu-hover:      #dbd2da !default;
 $brand-gray:            #848484 !default;
 $brand-gray-dark:       #6c6d6e !default;
 
+$state-purple-text:              #FFF !default;
+//** Purple
+$state-purple-bg:                $brand-purple !default;
+$state-purple-border:            darken(adjust-hue($state-purple-bg, -10), 5%) !default;
+//** Purple 2
+$state-purple-bg-2:                $brand-purple-2 !default;
+$state-purple-border-2:            darken(adjust-hue($state-purple-bg-2, -10), 5%) !default;
+
 //** Global textual link color.
-//$link-color:            $brand-primary;
-//** Link hover color set via `darken()` function.
-//$link-hover-color:      $brand-primary;
-//** Link hover decoration.
 $link-hover-decoration: none !default;
 
 //  Button Purple
@@ -65,3 +69,6 @@ $helvetica-css-prefix:       helve !default;
 $helvetica-version:          "1.0" !default;
 
 $username: #2a4b78;
+
+$font-size-base:          14px !default;
+$font-size-h7:            ceil(($font-size-base * 0.70)) !default; // ~10px
