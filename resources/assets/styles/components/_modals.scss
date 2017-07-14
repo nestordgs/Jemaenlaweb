@@ -1,0 +1,16 @@
+//
+// Modals
+// --------------------------------------------------
+
+// .modal-open      - body class for killing the scroll
+// .modal           - container to scroll within
+// .modal-dialog    - positioning shell for the actual modal
+// .modal-content   - actual modal w/ bg and corners and shit
+
+// Scale up the modal
+@media (min-width: $screen-sm-min) {
+//@media (min-width: $screen-md-min) {
+  // Automatically set modal's width for larger viewports
+  // Modal sizes
+  .modal-md { width: $modal-md-jema; }
+}

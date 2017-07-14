@@ -6,6 +6,11 @@
     padding-bottom: 15px;
   }
 }
+a {
+  &.link-black {
+    color: $brand-black;
+  }
+}
 @media (min-width: $screen-md) {
   .vertical-align {
     display: flex;
@@ -29,7 +34,7 @@
 .center-table p {
   display: table-cell;
   margin: 0;
-  color: white;
+  color: $brand-white;
   font-size: 3.5rem;
   border-radius: 50%;
   @media (min-width: $screen-md) {
@@ -85,4 +90,8 @@
 .firma-soluciones {
   height: 20px;
   display: inline;
+}
+.img-modal {
+  width: 180px;
+  @include box-shadow(0 0 15px rgba(0,0,0,.5));
 }

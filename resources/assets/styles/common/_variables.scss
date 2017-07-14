@@ -13,6 +13,10 @@ $brand-purple-2:        #d321d1 !default;
 $brand-menu-hover:      #dbd2da !default;
 $brand-gray:            #848484 !default;
 $brand-gray-dark:       #6c6d6e !default;
+$brand-blue-white:      #f0f8fc !default;
+$brand-blue:            #1e73be !default;
+$brand-white:           #fff !default;
+$brand-black:           #000 !default;
 
 $state-purple-text:              #FFF !default;
 //** Purple
@@ -72,3 +76,16 @@ $username: #2a4b78;
 
 $font-size-base:          14px !default;
 $font-size-h7:            ceil(($font-size-base * 0.70)) !default; // ~10px
+
+//== Panels
+//
+//** Border color for elements within panels
+//** Purple
+$panel-purple-text:           $state-purple-text !default;
+$panel-purple-border:         $state-purple-border !default;
+$panel-purple-heading-bg:     $state-purple-bg !default;
+//** Purple 2
+$panel-purple-2-border:         $state-purple-border-2 !default;
+$panel-purple-2-heading-bg:     $state-purple-bg-2 !default;
+
+$modal-md-jema:     440px !default;

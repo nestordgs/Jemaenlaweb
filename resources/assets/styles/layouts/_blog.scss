@@ -1,0 +1,295 @@
+.category-list {
+  @include not-last-child('li') {
+    border-right: 1px solid $brand-black;
+  }
+  li {
+    a {
+      color: $brand-black;
+    }
+  }
+}
+.blog {
+  &.grid-2 {
+    > .img-responsive {
+      margin-bottom: 30px;
+      height: 155px;
+    }
+  }
+  > figcaption {
+    color: $brand-white;
+  }
+}
+.count-comments {
+  color: $brand-white;
+  background-color: $brand-black;
+  padding: 3px 7px;
+  position: absolute;
+  right: 5%;
+  bottom: 65%;
+  &:after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    margin-left: 0;
+    border-width: 3px;
+    border-style: solid;
+    border-color: $brand-black transparent transparent $brand-black;
+    left: 0;
+  }
+}
+.divider {
+  border-bottom: 2px solid $brand-blue;
+  > span {
+    color: $brand-white;
+    background-color: $brand-blue;
+    padding: 4px 15px;
+    font-weight: bold;
+  }
+}
+.grid{
+  position: relative;
+  margin: 0 auto;
+  padding: 1em 0 1em;
+  max-width: 1000px;
+  list-style: none;
+  & .blog {
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    .img-first-grid {
+      @include transition(opacity 0.35s, transform 0.35s);
+    }
+    &:hover {
+      background-color: fade_out($brand-purple, 0.25);
+      & .img-first-grid {
+        @include opacity(0.25);
+        @include scale(0.95);
+      }
+    }
+    figcaption {
+      color: $brand-white;
+      text-transform: uppercase;
+      font-size: 1.25em;
+      @include backface-visibility(hidden);
+      &:before, &:after {
+        pointer-events: none;
+      }
+      &, & > a {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+      }
+      & > a {
+        z-index: 1000;
+        text-indent: 200%;
+        white-space: nowrap;
+        font-size: 0;
+        @include opacity(0);
+      }
+    }
+    p {
+      margin: 0;
+      letter-spacing: 1px;
+      font-size: 68.5%;
+    }
+    &.effect-zoe,
+    &.blog-jema-1 {
+      figcaption{
+        top: auto;
+        bottom: 0;
+        padding: 1em;
+        height: 3.75em;
+        background-color: $brand-white;
+        color: #3c4a50;
+        @include transition(transform 0.35s);
+        @include translate3d(0,100%,0);
+      }
+      h4 {
+        float: left;
+        display: inline-block;
+        width: 75%;
+        @extend .h7;
+        @media (min-width: $screen-md-min) {
+          font-size: $font-size-h5;
+        }
+      }
+      p.icon-links {
+        a {
+          float: right;
+          color: #3c4a50;
+          font-size: 1.4em;
+          & span:before {
+            padding: 8px 10px;
+            speak: none;
+            display: inline-block;
+          }
+        }
+      }
+      &:hover {
+        p.icon-links {
+          a {
+            &:nth-child(3) {
+              @include transition-delay(0.1s);
+            }
+            &:nth-child(2) {
+              @include transition-delay(0.15s);
+            }
+            &:first-child {
+              @include transition-delay(0.2s);
+            }
+            &:hover,
+            &:focus {
+              color: $brand-purple;
+            }
+          }
+        }
+        p.description {
+          @include opacity(1);
+        }
+        figcaption, h4, p.icon-links a {
+          @include translate3d(0,0,0);
+        }
+        h4 {
+          @include transition-delay(0.05s);
+        }
+      }
+      p.description {
+        position: absolute;
+        bottom: 7em;
+        @media (min-width: $screen-md-min) {
+          bottom: 8em;
+          padding: 2em;
+        }
+        color: $brand-white;
+        text-transform: none;
+        @include opacity(0);
+        @include transition(opacity 0.35s);
+        @include backface-visibility(hidden);
+      }
+      h4, p.icon-links a {
+        @include translate3d(0,200%,0);
+        @include transition(transform 0.35s);
+      }
+    }
+    &.effect-winston,
+    &.blog-jema-2 {
+      background: $brand-purple;
+      text-align: left;
+      .img-second-grid {
+        @include transition(opacity 0.45s);
+        @include backface-visibility(hidden);
+      }
+      h4 {
+        @extend .h7;
+        @media (min-width: $screen-md-min) {
+          font-size: $font-size-h6;
+        }
+        @include opacity(0);
+        @include translate3d(0,20px,0);
+        @include transition(opacity 0.35s, transform 0.35s)
+      }
+      p {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        i {
+          @include opacity(0);
+          @include translate3d(0,50px,0);
+          @include transition(opacity 0.35s, transform 0.35s);
+        }
+      }
+      a {
+        margin: 0 10px;
+        color: #3c4a50;
+        font-size: 140%;
+        &:hover,
+        &:focus {
+          color: $brand-purple;
+        }
+        i {
+          @include opacity(0);
+          @include translate3d(0,50px,0);
+          @include transition(opacity 0.35s, transform 0.35s);
+        }
+      }
+      figcaption {
+        padding: .5em 1em;
+        &:before {
+          content: '';
+          position: absolute;
+          bottom: -50%;
+          right: -30px;
+          width: 100%;
+          height: 50%;
+          transform: rotate3d(0,0,1,0deg);
+          background: $brand-white;
+          @include opacity(0);
+          @include transition(all 0.45s ease-in-out);
+        }
+      }
+      &:hover {
+        .img-second-grid {
+          @include opacity(0.6);
+        }
+        h4 {
+          @include opacity(1);
+          @include translate3d(0,0,0);
+        }
+        figcaption{
+          &:before {
+            @include opacity(0.7);
+            transform: rotate3d(0,0,1,-25deg);
+            bottom: -32%;
+            height: 52%;
+          }
+        }
+        p {
+          i {
+            @include opacity(1);
+            @include translate3d(0,0,0);
+          }
+          a {
+            &:nth-child(3) {
+              @include transition-delay(0.05s);
+            }
+            &:nth-child(2) {
+              @include transition-delay(0.1s);
+            }
+            &:first-child {
+              @include transition-delay(0.15s);
+            }
+            &:hover,
+            &:focus {
+              color: $brand-purple;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+.page-numbers {
+  @extend .list-inline;
+  @extend .text-center;
+  li {
+    a, span {
+      @extend .hidden;
+      &.next, &.prev {
+        @extend .visible-xs;
+        @extend .visible-sm;
+        @extend .visible-md;
+        @extend .visible-lg;
+        @extend .btn;
+        @extend .btn-default;
+        &:hover {
+          @extend .btn-purple;
+        }
+        &.current {
+          @extend .btn-purple;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,11 @@
+//
+// Panels
+// --------------------------------------------------
+
+// Contextual variations
+.panel-purple {
+  @include panel-variant($panel-purple-border, $panel-purple-text, $panel-purple-heading-bg, $panel-purple-border);
+}
+.panel-purple-2 {
+  @include panel-variant($panel-purple-2-border, $panel-purple-text, $panel-purple-2-heading-bg, $panel-purple-2-border);
+}

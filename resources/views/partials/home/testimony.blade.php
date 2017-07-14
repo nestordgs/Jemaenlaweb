@@ -31,7 +31,7 @@
                                       "slidesToScroll": {{ (get_theme_mod('slidesToScroll') > get_theme_mod('slidesToShow')) ? get_theme_mod('slidesToShow') : get_theme_mod('slidesToScroll') }}}'>
                         @while($query->have_posts())
                             @php($query->the_post())
-                            <figure>
+                            <figure class="slick-figure">
                                 <a data-toggle="modal" data-target="#testimony_{{ get_the_ID() }}">
                                     {{ the_post_thumbnail('' , array('class' => 'img-responsive center-block img-carousel-slick')) }}
                                     <figcaption></figcaption>
@@ -42,18 +42,15 @@
                     @while($query->have_posts())
                         @php($query->the_post())
                         <div class="modal fade" tabindex="-1" role="dialog" id="testimony_{{ get_the_ID() }}">
-                            <div class="modal-dialog" role="document">
-                                <div class="modal-content panel-purple">
-                                    <header class="modal-header panel-heading">
-                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                                        <h4 class="modal-title text-center">{{ the_title() }}</h4>
+                            <div class="modal-dialog modal-md" role="document">
+                                <div class="modal-content">
+                                    <header class="modal-header">
+                                        <button type="button" class="close jema" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                        {{ the_post_thumbnail('' , array('class' => 'img-responsive center-block img-circle img-modal')) }}
                                     </header>
-                                    <div class="modal-body text-justify">
+                                    <div class="modal-body text-center">
                                         {{ the_content() }}
                                     </div>
-                                    <footer class="modal-footer">
-                                        <button type="button" class="btn btn-default close" data-dismiss="modal">Cerrar</button>
-                                    </footer>
                                 </div>
                             </div>
                         </div>

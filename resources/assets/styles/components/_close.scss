@@ -1,0 +1,22 @@
+//
+// Close icons
+// --------------------------------------------------
+
+
+.close {
+  &.jema {
+    font-size: ($font-size-base * 1.4);
+    border-radius: 50px;
+    width: 20px;
+    height: 20px;
+    color: $brand-white;
+    text-shadow: none;
+    @include opacity(1);
+    background: #CCCCCC;
+
+    &:hover,
+    &:focus {
+      background: $brand-gray-dark;
+    }
+  }
+}

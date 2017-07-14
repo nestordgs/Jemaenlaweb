@@ -5,6 +5,12 @@
 .bg-dark-gray {
   background-color: #e3e3e3;
 }
+.bg-blue-white {
+  background-color: fade_out($brand-blue-white, 0.34);
+}
+.bg-blue-light {
+  background-color: #edf4f6;
+}
 .iframe-video {
   height: 215px;
   @media (min-width: $screen-sm) {
@@ -24,7 +30,7 @@
     }
   }
 }
-figure {
+.slick-figure {
   margin: 0;
   position: relative;
   figcaption {
@@ -40,8 +46,6 @@ figure {
     top: 0;
     left: 0;
     padding: 20px;
-    //background: #2c3f52;
-    //background: rgba(105, 4, 98, 0.5);
     background-color: fade_out($brand-purple, 0.4);
   }
   &:hover {

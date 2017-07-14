@@ -54,10 +54,7 @@
         transition: all .3s linear;
       }
     }
-    > .current-menu-item > a {
-      color: $navbar-purple-link-active-color;
-    }
-    > .current-menu-item, .active > a {
+    > .active > a {
       &,
       &:hover,
       &:focus {
