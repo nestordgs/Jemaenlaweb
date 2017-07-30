@@ -1,4 +1,13 @@
 {{-- Created by Nestor on 6/27/2017. --}}
+@php
+    // WP_Query arguments
+    $args = array(
+        'category_name' => 'subscription',
+    );
+
+    // The Query
+    $query = new WP_Query( $args );
+@endphp
 <div class="bg-dark-gray">
     <div class="container pad-top-15">
         <div class="row pad-top-15 pad-btn-15">
@@ -7,8 +16,14 @@
                 <p class="text-gray">
                     Suscríbete a mi newsletter y obtén contenido exclusivo que te ayudará a potenciar tus ventas en el mundo digital. #AprendoConJeMa
                 </p>
+                @if($query->have_posts())
+                    @while($query->have_posts())
+                        @php($query->the_post())
+                            {{ the_content() }}
+                    @endwhile
+                @endif
                 <form action="#">
-                    <div class="form-group">
+                    {{--<div class="form-group">
                         <span class="input input-jema">
                             <input class="input-field input-field-jema" type="text" id="input-4" />
                             <label class="input-label input-label-jema input-label-jema-color" for="input-4">
@@ -28,7 +43,7 @@
                         <button class="btn btn-sm btn-purple" type="button">
                             ¡Lo Quiero!
                         </button>
-                    </p>
+                    </p>--}}
                 </form>
             </div>
             <div class="col-xs-12 col-sm-6">
@@ -37,3 +52,4 @@
         </div>
     </div>
 </div>
+@php(wp_reset_postdata())
