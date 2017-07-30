@@ -26,11 +26,7 @@ $argsPagination = array(
 @endphp
 @extends('layouts.app')
 @section('content')
-    <div class="bg-blue-light pad-btn-15 pad-top-15">
-        <h1 class="text-center pacifico text-gray-dark">
-            <strong>{{ get_theme_mod('title_blog') }}</strong>
-        </h1>
-    </div>
+    @include('partials.title-blog')
     <div class="container pad-top-15">
         <div class="row pad-top-15 pad-btn-15">
             <div class="col-xs-12 pad-btn-15">
@@ -45,26 +41,28 @@ $argsPagination = array(
             </div>
             @while($query->have_posts())
                 @php($query->the_post())
-                @if($i == 0)
-                    @include('partials.blog.first-grid')
-                @elseif($i > 0 && $i < 5)
-                    @if($i == 1)
-                        <div class="row col-xs-12 col-sm-6 center-block">
+                    @if(!in_category('subscription'))
+                        @if($i == 0)
+                            @include('partials.blog.first-grid')
+                        @elseif($i > 0 && $i < 5)
+                            @if($i == 1)
+                                <div class="row col-xs-12 col-sm-6 center-block">
+                            @endif
+                                @include('partials.blog.second-grid')
+                            @if($i == 4)
+                                </div>
+                            @endif
+                        @else
+                            @if($i==5)
+                                <div class="col-xs-12 col-md-8">
+                            @endif
+                                @include('partials.blog.third-grid')
+                            @if($i == $totalPost)
+                                </div>
+                            @endif
+                        @endif
+                        @php($i++)
                     @endif
-                        @include('partials.blog.second-grid')
-                    @if($i == 4)
-                        </div>
-                    @endif
-                @else
-                    @if($i==5)
-                        <div class="col-xs-12 col-md-8">
-                    @endif
-                        @include('partials.blog.third-grid')
-                    @if($i == $totalPost)
-                        </div>
-                    @endif
-                @endif
-                @php($i++)
             @endwhile
         </div>
         @include('partials.sidebar')

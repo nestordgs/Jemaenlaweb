@@ -6,13 +6,13 @@ export default {
     // JavaScript to be fired on all pages, after page specific JS is fired
       $('.input-field')
           .blur(function () {
-              let parent = $(this).parent('span');
+              let parent = $(this).closest('.input-jema');
               if ($(this).val().trim() === '') {
                 parent.removeClass('input-filled');
               }
           })
           .focus(function () {
-              let parent = $(this).parent('span');
+              let parent = $(this).closest('.input-jema');
               parent.addClass('input-filled');
           });
       $(".navbar a, footer a[href='#top']").on('click', function(event) {

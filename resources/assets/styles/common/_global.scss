@@ -6,6 +6,9 @@
     padding-bottom: 15px;
   }
 }
+.inline-block {
+  display: inline-block;
+}
 a {
   &.link-black {
     color: $brand-black;
@@ -94,4 +97,15 @@ a {
 .img-modal {
   width: 180px;
   @include box-shadow(0 0 15px rgba(0,0,0,.5));
+}
+.entry-author {
+  @extend .alert;
+  &.single {
+    @include alert-variant($alert-info-2-bg, $alert-info-2-border, $alert-info-2-text);
+  }
+  .fa {
+    margin: auto 5px;
+    border-right: 1px solid $brand-gray;
+    padding: 0 7px;
+  }
 }

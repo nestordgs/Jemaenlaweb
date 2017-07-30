@@ -1,13 +1,33 @@
-<article @php(post_class())>
-  <header>
-    <h1 class="entry-title">{{ get_the_title() }}</h1>
-    @include('partials/entry-meta')
-  </header>
-  <div class="entry-content">
-    @php(the_content())
+@include('partials.title-blog')
+<div class="container">
+  <div class="row pad-top-15 pad-btn-15">
+    <div class="col-xs-12 pad-btn-15">
+      @php
+        wp_nav_menu( array(
+            'theme_location' => 'category_blog',
+            'container'      => 'ul',
+            'menu_class'     => 'list-inline category-list',
+            'menu_id'     => 'menu-category',
+        ));
+      @endphp
+    </div>
+    <div class="col-xs-12 col-sm-8">
+      {{ the_post_thumbnail('' , array('class' => 'img-responsive center-block')) }}
+    </div>
   </div>
-  <footer>
-    {!! wp_link_pages(['echo' => 0, 'before' => '<nav class="page-nav"><p>' . __('Pages:', 'sage'), 'after' => '</p></nav>']) !!}
-  </footer>
-  @php(comments_template('/partials/comments.blade.php'))
-</article>
+  <div class="row pad-top-15">
+    <div class="col-xs-12 col-md-8">
+      <article @php(post_class())>
+        <header>
+          @include('partials/entry-meta')
+        </header>
+        <div class="entry-content">
+          @php(the_content())
+        </div>
+      </article>
+      @include('partials.writer')
+      @php(comments_template('/partials/comments.blade.php'))
+    </div>
+    @include('partials.sidebar')
+  </div>
+</div>

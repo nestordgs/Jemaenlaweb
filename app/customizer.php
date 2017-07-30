@@ -23,6 +23,50 @@ if (!function_exists( 'custom_navigation_menus')) {
 	add_action( 'init', __NAMESPACE__ . '\\custom_navigation_menus' );
 }
 
+if (!function_exists( 'jema_sidebars')) {
+	// Register Sidebars
+	function jema_sidebars() {
+
+		$args = array(
+			'id'            => 'sidebar-blog',
+			'class'         => 'sidebar-blog',
+			'name'          => __( 'Blog', 'sage' ),
+			'before_title'  => '<h3>',
+			'after_title'   => '</h3>',
+			'before_widget' => '<section class="widget pad-btn-15 %1$s %2$s">',
+			'after_widget'  => '</section>',
+		);
+		register_sidebar( $args );
+
+		$args = array(
+			'id'            => 'sidebar-blog-images',
+			'class'         => 'sidebar-blog-images',
+			'name'          => __( 'Blog Images', 'sage' ),
+			'before_title'  => '<h3>',
+			'after_title'   => '</h3>',
+			'before_widget' => '<section class="widget pad-btn-15 sidebar-blog-images %1$s %2$s">',
+			'after_widget'  => '</section>',
+		);
+		register_sidebar( $args );
+
+	}
+	add_action( 'widgets_init', __NAMESPACE__ . '\\jema_sidebars' );
+}
+
+if (!function_exists( 'modify_contact_methods')) {
+	// Add new fields
+	function modify_contact_methods($profile_fields) {
+
+		$profile_fields['twitter'] = 'Twitter Username';
+		$profile_fields['facebook'] = 'Facebook URL';
+		$profile_fields['gplus'] = 'Google+ URL';
+		$profile_fields['linkedin'] = 'Linkedin URL';
+
+		return $profile_fields;
+	}
+	add_filter('user_contactmethods', __NAMESPACE__ . '\\modify_contact_methods');
+}
+
 if (!function_exists( 'jema_theme_features')) {
 	// Register Theme Features
 	function jema_theme_features()  {

@@ -293,3 +293,37 @@
     }
   }
 }
+.comment-list {
+  padding: 0;
+  .media {
+    > a {
+      @media (min-width: $screen-sm-min) {
+        float: left;
+      }
+      img {
+        width: 60px;
+      }
+    }
+    .media-body {
+      position: relative;
+      border-bottom: 1px solid fade_out($brand-gray, 0.62);
+      .well-lg {
+        padding: 0 24px;
+        background-color: transparent;
+        border: 0;
+        box-shadow: none;
+        .media-comment {
+          margin-bottom: 20px;
+        }
+      }
+    }
+  }
+  ul.children {
+    padding: 20px 0 0 80px;
+  }
+}
+.sidebar-blog-images {
+  img {
+    @extend .center-block;
+  }
+}

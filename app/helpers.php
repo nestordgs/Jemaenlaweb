@@ -126,3 +126,31 @@ function getVideoUrl($type, $link) {
 	}
 	return "Debe seleccionar el tipo de video correspondiente al enlace";
 }
+
+function format_comment($comment, $args, $depth) {
+    $GLOBALS['comment'] = $comment; ?>
+    <li class="media" id="li-comment-<?php comment_ID() ?>" data-test="<?php echo get_comment_author_email() ?>">
+        <a href="#">
+            <img src="<?php printf( __('%s'), get_avatar_url( get_comment_author_email() ) ) ?>" alt="" class="media-objet img-circle img-responsive center-block">
+        </a>
+        <div class="media-body">
+            <div class="well well-lg">
+                <header class="media-heading">
+                    <span class="text-uppercase">
+		                <?php printf( __('%s'), get_comment_author_link() ) ?> -
+                    </span>
+                    <time class="text-gray h7" datetime="<?php printf( __('%1$s'), get_comment_date( 'Y-m-d H:i:s.u' ), get_comment_time() ) ?>">
+                        <em><?php printf( __('%1$s'), get_comment_date(), get_comment_time() ) ?></em>
+                    </time>
+                </header>
+                <p class="media-comment text-justify"><?php echo $comment->comment_content; ?></p>
+                <footer class="reply text-right">
+	                <?php
+                        $myclass = 'btn btn-sm btn-purple';
+                        echo preg_replace( '/comment-reply-link/', 'comment-reply-link ' . $myclass, get_comment_reply_link(array_merge( $args, array( 'depth' => $depth, 'max_depth' => $args['max_depth']))), 1 );
+	                ?>
+                </footer>
+            </div>
+        </div>
+    </li>
+<?php }

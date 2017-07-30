@@ -8,29 +8,7 @@
             <p class="h7 text-center text-gray">
                 Suscríbete a mi newsletter y obtén contenido exclusivo que te ayudará a potenciar tus ventas en el mundo digital. #AprendoConJeMa
             </p>
-            <form action="#">
-                <div class="form-group">
-                    <span class="input input-jema">
-                        <input class="input-field input-field-jema" type="text" id="name" name="name" />
-                        <label class="input-label input-label-jema input-label-jema-color" for="name">
-                            <span class="input-label-content input-label-content-jema">Nombre</span>
-                        </label>
-                    </span>
-                </div>
-                <div class="form-group">
-                    <span class="input input-jema">
-                        <input class="input-field input-field-jema" type="text" id="email" name="email" />
-                        <label class="input-label input-label-jema input-label-jema-color" for="email">
-                            <span class="input-label-content input-label-content-jema">Correo Electrónico</span>
-                        </label>
-                    </span>
-                </div>
-                <p class="text-right">
-                    <button class="btn btn-sm btn-purple" type="button">
-                        ¡Lo Quiero!
-                    </button>
-                </p>
-            </form>
+            @php(dynamic_sidebar('sidebar-blog'))
         </div>
     </div>
     <div class="row pad-top-15">
@@ -49,14 +27,9 @@
             @endphp
         </div>
     </div>
-    <div class="row pad-top-15 pad-btn-15">
+    <div class="row pad-btn-15 pad-top-15">
         <div class="col-xs-12">
-            <img src="http://jema.dev/wp-content/uploads/2017/07/banner_1.jpg" alt="" class="img-responsive center-block">
-        </div>
-    </div>
-    <div class="row pad-top-15 pad-btn-15">
-        <div class="col-xs-12">
-            <img src="http://jema.dev/wp-content/uploads/2017/07/banner_2.jpg" alt="" class="img-responsive center-block">
+            @php(dynamic_sidebar('sidebar-blog-images'))
         </div>
     </div>
 </div>

@@ -1,78 +1,83 @@
 // Search form
-.input {
-  position: relative;
-  z-index: 1;
-  display: inline-block;
-  width: 100%;
-  vertical-align: top;
-  &-field {
+.form-group {
+  .input-jema {
     position: relative;
-    display: block;
-    float: right;
-    padding: 0.8em;
-    border: none;
-    border-radius: 0;
-    height: auto;
-    box-shadow: none;
-    &:focus {
-      box-shadow: none;
-      outline: none;
-    }
-    &-jema {
-      margin-top: 1em;
-      padding: 0.85em 0.15em;
-      width: 100%;
-      background: transparent;
-    }
-  }
-  &-label {
+    z-index: 1;
     display: inline-block;
-    float: right;
-    user-select: none;
-    @extend .text-gray;
-    &-content {
+    width: 100%;
+    vertical-align: top;
+    input, textarea {
       position: relative;
       display: block;
-      padding: 0.8em 0 1em 0;
-      width: 100%;
-    }
-    &-jema {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      padding: 0 0.25em;
-      width: 100%;
-      height: calc(100% - 1em);
-      text-align: left;
-      pointer-events: none;
-      &:before , &:after {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
+      float: right;
+      padding: 0.8em;
+      border: none;
+      border-radius: 0;
+      height: auto;
+      box-shadow: none;
+      &:focus {
+        box-shadow: none;
+        outline: none;
+      }
+      & {
+        margin-top: 1em;
+        padding: 0.85em 0.15em;
         width: 100%;
-        height: calc(100% - 10px);
-        border-bottom: 1px solid #B9C1CA;
-      }
-      &:after {
-        margin-top: 2px;
-        border-bottom: 2px solid red;
-        transform: translate3d(-100%, 0, 0);
-        transition: transform 0.3s;
-      }
-      &-color:after {
-        border-color: $brand-purple;
+        background: transparent;
       }
     }
+    label {
+      display: inline-block;
+      float: right;
+      user-select: none;
+      @extend .text-gray;
+      > span {
+        position: relative;
+        display: block;
+        padding: 0.8em 0 1em 0;
+        width: 100%;
+      }
+      & {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        padding: 0 0.25em;
+        width: 100%;
+        height: calc(100% - 1em);
+        text-align: left;
+        pointer-events: none;
+        &:before, &:after {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: calc(100% - 10px);
+          border-bottom: 1px solid $brand-gray-dark;
+        }
+        &:after {
+          margin-top: 2px;
+          border-bottom: 2px solid $brand-purple;
+          transform: translate3d(-100%, 0, 0);
+          transition: transform 0.3s;
+        }
+      }
+    }
+    & {
+      overflow: hidden;
+    }
   }
-  &-jema {
-    overflow: hidden;
+  input:focus + label:after, .input-filled label:after {
+    transform: translate3d(0, -1px, 0);
+  }
+  input:focus + label > span, .input-filled label span {
+    animation: anim-1 0.3s forwards;
   }
 }
-.input-field-jema:focus + .input-label-jema:after, .input-filled .input-label-jema:after {
-  transform: translate3d(0, -1px, 0);
-}
-.input-field-jema:focus + .input-label-jema .input-label-content-jema, .input-filled .input-label-content-jema {
+input:focus + label:after , .input-field-jema:focus + .input-label-jema:after, .input-filled .input-label-jema:after {
+   transform: translate3d(0, -1px, 0);
+ }
+input:focus + label > span , .input-field-jema:focus + .input-label-jema .input-label-content-jema, .input-filled .input-label-content-jema {
   animation: anim-1 0.3s forwards;
 }
 @keyframes anim-1 {
@@ -88,5 +93,13 @@
     opacity: 1;
     transform: translate3d(0, -40%, 0);
     color: $brand-purple;
+  }
+}
+.required {
+  color: $brand-danger;
+}
+.wpcf7-submit {
+  &.btn-purple {
+    width: 80px;
   }
 }

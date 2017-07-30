@@ -89,3 +89,16 @@ $panel-purple-2-border:         $state-purple-border-2 !default;
 $panel-purple-2-heading-bg:     $state-purple-bg-2 !default;
 
 $modal-md-jema:     440px !default;
+
+//== Form states and alerts
+//
+//## Define colors for form feedback states and, by default, alerts.
+
+$state-info-2-text:                #5dc1ce !default;
+$state-info-2-bg:                  #b8dbfe !default;
+$state-info-2-border:              darken(adjust-hue($state-info-2-bg, -10), 7%) !default;
+
+
+$alert-info-2-bg:            $state-info-2-bg !default;
+$alert-info-2-text:          $state-info-2-text !default;
+$alert-info-2-border:        $state-info-2-border !default;
