@@ -1,0 +1,20 @@
+{{-- Created by Nestor on 7/31/2017. --}}
+        <!doctype html>
+<html @php(language_attributes())>
+@include('partials.head')
+<body @php(body_class())>
+@php(do_action('get_header'))
+    @include('partials.header')
+    <div class="" role="document">
+        @yield('content')
+        @if (App\display_sidebar())
+            <aside class="sidebar">
+                @include('partials.sidebar')
+            </aside>
+        @endif
+    </div>
+    @php(do_action('get_footer'))
+        @include('partials.home.footer')
+        @php(wp_footer())
+</body>
+</html>
