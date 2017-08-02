@@ -5,6 +5,10 @@
 .bg-dark-gray {
   background-color: #e3e3e3;
 }
+.bg-gray {
+  background-color: $brand-gray-dark;
+  color: $brand-white;
+}
 .bg-blue-white {
   background-color: fade_out($brand-blue-white, 0.34);
 }

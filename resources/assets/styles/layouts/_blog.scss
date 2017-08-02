@@ -327,3 +327,16 @@
     @extend .center-block;
   }
 }
+.sidebar-footer-2 {
+  ul {
+    li {
+      a {
+        color: $brand-white;
+        @include transition(color 0.2s ease-in-out);
+        &:hover {
+          color: $brand-purple;
+        }
+      }
+    }
+  }
+}

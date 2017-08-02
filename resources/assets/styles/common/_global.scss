@@ -56,6 +56,7 @@ a {
 @include text-emphasis-variant('.text-gray', $brand-gray);
 @include text-emphasis-variant('.text-gray-dark', $brand-gray-dark);
 @include text-emphasis-variant('.text-purple-2', $brand-purple-2);
+@include text-emphasis-variant('.text-white', $brand-white);
 
 .fa-stack {
   @media (min-width: $screen-sm) {

@@ -103,3 +103,13 @@ input:focus + label > span , .input-field-jema:focus + .input-label-jema .input-
     width: 80px;
   }
 }
+.form-inverse {
+  .input-jema {
+    label {
+      color: $brand-white;
+      &:before {
+        border-bottom: 1px solid #dadada;
+      }
+    }
+  }
+}

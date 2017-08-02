@@ -49,6 +49,16 @@ if (!function_exists( 'jema_sidebars')) {
 		);
 		register_sidebar( $args );
 
+		$args = array(
+			'id'            => 'sidebar-footer-2',
+			'class'         => 'sidebar-footer-2',
+			'name'          => __( 'Footer 2', 'sage' ),
+			'before_title'  => '<h3>',
+			'after_title'   => '</h3>',
+			'before_widget' => '<section class="widget %1$s %2$s sidebar-footer-2">',
+			'after_widget'  => '</section>',
+		);
+		register_sidebar( $args );
 	}
 	add_action( 'widgets_init', __NAMESPACE__ . '\\jema_sidebars' );
 }
@@ -591,6 +601,113 @@ function customize_register( $wp_customize ) {
 			'panel'    => 'theme_options_2'
 		)
 	);
+		$wp_customize->add_section(
+			'footer_blog_page', array(
+				'title'    => __( 'Footer', 'theme' ),
+				'priority' => 2,
+				'panel'    => 'theme_options_2'
+			)
+		);
+		/**
+		 * Title form - Footer
+		 */
+		$wp_customize->add_setting(
+			'form-title', array(
+				'default'           => '',
+				'type'              => 'theme_mod',
+				'capability'        => 'edit_theme_options',
+				'transport'         => '',
+				'sanitize_callback' => 'esc_textarea',
+			)
+		);
+		$wp_customize->add_control(
+			'form-title', array(
+				'type'     => 'text',
+				'priority' => 0,
+				'section'  => 'footer_blog_page',
+				'label'    => __( 'Titulo Formulario', 'textdomain' ),
+			)
+		);
+		/**
+		 * Text form - Footer
+		 */
+		$wp_customize->add_setting(
+			'form-text', array(
+				'default'           => '',
+				'type'              => 'theme_mod',
+				'capability'        => 'edit_theme_options',
+				'transport'         => '',
+				'sanitize_callback' => 'esc_textarea',
+			)
+		);
+		$wp_customize->add_control(
+			'form-text', array(
+				'type'     => 'text',
+				'priority' => 0,
+				'section'  => 'footer_blog_page',
+				'label'    => __( 'Texto Formulario', 'textdomain' ),
+			)
+		);
+		/**
+		 * Contact Email - Footer
+		 */
+		$wp_customize->add_setting(
+			'email_footer', array(
+				'default'           => '',
+				'type'              => 'theme_mod',
+				'capability'        => 'edit_theme_options',
+				'transport'         => '',
+				'sanitize_callback' => 'esc_textarea',
+			)
+		);
+		$wp_customize->add_control(
+			'email_footer', array(
+				'type'     => 'text',
+				'priority' => 0,
+				'section'  => 'footer_blog_page',
+				'label'    => __( 'Email de Contacto', 'textdomain' ),
+			)
+		);
+		/**
+		 * Contact Phone - Footer
+		 */
+		$wp_customize->add_setting(
+			'phone_footer', array(
+				'default'           => '',
+				'type'              => 'theme_mod',
+				'capability'        => 'edit_theme_options',
+				'transport'         => '',
+				'sanitize_callback' => 'esc_textarea',
+			)
+		);
+		$wp_customize->add_control(
+			'phone_footer', array(
+				'type'     => 'text',
+				'priority' => 0,
+				'section'  => 'footer_blog_page',
+				'label'    => __( 'Telefono de Contacto', 'textdomain' ),
+			)
+		);
+		/**
+		 * Contact Address - Footer
+		 */
+		$wp_customize->add_setting(
+			'address_footer', array(
+				'default'           => '',
+				'type'              => 'theme_mod',
+				'capability'        => 'edit_theme_options',
+				'transport'         => '',
+				'sanitize_callback' => 'esc_textarea',
+			)
+		);
+		$wp_customize->add_control(
+			'address_footer', array(
+				'type'     => 'text',
+				'priority' => 0,
+				'section'  => 'footer_blog_page',
+				'label'    => __( 'Dirección de Contacto', 'textdomain' ),
+			)
+		);
 
 	/**
 	 * Titulo del Sitio
