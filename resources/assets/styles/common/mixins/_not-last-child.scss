@@ -1,5 +1,8 @@
+/**
+ * No apply the content to last child for the selector
+ */
 @mixin not-last-child($selector) {
-  & #{$selector}:not(:last-child) {
+  #{$selector}:not(:last-child) {
     @content;
   }
 }
