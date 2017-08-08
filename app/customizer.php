@@ -594,13 +594,14 @@ function customize_register( $wp_customize ) {
 		)
 	);
 
-	$wp_customize->add_section(
-		'header_blog_page', array(
-			'title'    => __( 'Header', 'theme' ),
-			'priority' => 1,
-			'panel'    => 'theme_options_2'
-		)
-	);
+		$wp_customize->add_section(
+			'header_blog_page', array(
+				'title'    => __( 'Header', 'theme' ),
+				'priority' => 1,
+				'panel'    => 'theme_options_2'
+			)
+		);
+
 		/**
 		 * Titulo del Sitio
 		 */
@@ -621,6 +622,7 @@ function customize_register( $wp_customize ) {
 				'label'    => __( 'Titulo del Blog', 'textdomain' ),
 			)
 		);
+
 		$wp_customize->add_section(
 			'footer_blog_page', array(
 				'title'    => __( 'Footer', 'theme' ),
@@ -730,25 +732,46 @@ function customize_register( $wp_customize ) {
 		);
 
 	/**
-	 * Titulo del Sitio
+	 * Panel Services Page
 	 */
-	$wp_customize->add_setting(
-		'title_blog', array(
-			'default'           => '',
-			'type'              => 'theme_mod',
-			'capability'        => 'edit_theme_options',
-			'transport'         => '',
-			'sanitize_callback' => 'esc_textarea',
+	$wp_customize->add_panel(
+		'theme_options_3', array(
+			'priority'       => 3,
+			'capability'     => 'edit_theme_options',
+			'theme_supports' => '',
+			'title'          => __( 'Servicios', 'sage' ),
+			'description'    => __( 'Several settings pertaining my theme', 'sage' ),
 		)
 	);
-	$wp_customize->add_control(
-		'title_blog', array(
-			'type'     => 'text',
-			'priority' => 0,
-			'section'  => 'header_blog_page',
-			'label'    => __( 'Titulo del Blog', 'textdomain' ),
-		)
-	);
+
+		$wp_customize->add_section(
+			'header_service_page', array(
+				'title'    => __( 'Header', 'theme' ),
+				'priority' => 1,
+				'panel'    => 'theme_options_3'
+			)
+		);
+
+		/**
+		 * Titulo del Sitio
+		 */
+		$wp_customize->add_setting(
+			'title_services', array(
+				'default'           => '',
+				'type'              => 'theme_mod',
+				'capability'        => 'edit_theme_options',
+				'transport'         => '',
+				'sanitize_callback' => 'esc_textarea',
+			)
+		);
+		$wp_customize->add_control(
+			'title_services', array(
+				'type'     => 'text',
+				'priority' => 0,
+				'section'  => 'header_service_page',
+				'label'    => __( 'Titulo Pagina de Servicios', 'textdomain' ),
+			)
+		);
 }
 
 add_action( 'customize_register', __NAMESPACE__ . '\\customize_register' );

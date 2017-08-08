@@ -1,0 +1,9 @@
+/**
+ * Created by Nestor on 8/2/2017.
+ */
+.service {
+  padding: 64px 0;
+  @include not-last-child('&') {
+    border-bottom: 1px solid lighten( $brand-gray, 18% );
+  }
+}
