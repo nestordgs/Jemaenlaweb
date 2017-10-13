@@ -154,3 +154,14 @@ function format_comment($comment, $args, $depth) {
         </div>
     </li>
 <?php }
+
+function isPremium($post_id) {
+	$terms = get_the_terms( $post_id, 'academy-type' );
+
+	foreach ( $terms as $term ) {
+	    if ($term->name == 'Premium') {
+	        return true;
+        }
+    }
+    return false;
+}

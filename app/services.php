@@ -56,9 +56,11 @@ function services_post_type() {
 		'show_in_nav_menus'     => true,
 		'can_export'            => true,
 		'has_archive'           => true,
+		'query_var'             => true,
 		'exclude_from_search'   => false,
 		'publicly_queryable'    => true,
-		'capability_type'       => 'page',
+		'rewrite'               => true,
+		'capability_type'       => 'post',
 	);
 	register_post_type( 'services', $args );
 

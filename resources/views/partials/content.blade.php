@@ -1,9 +1,9 @@
 <!--Content-->
-<div @php(post_class('row pad-top-15'))>
+<div @php(post_class('row pad-top-15 pad-btn-15'))>
     <article>
         <div class="col-xs-12 col-sm-6">
             <div class="">
-                {{ the_post_thumbnail('' , array('class' => 'img-responsive')) }}
+                {{ the_post_thumbnail('' , array('class' => 'img-responsive center-block')) }}
             </div>
         </div>
         <div class="col-xs-12 col-sm-6">

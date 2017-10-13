@@ -1,0 +1,48 @@
+/**
+ * Created by Nestor on 8/24/2017.
+ */
+.academy {
+  .tipo-recurso {
+    position: absolute;
+    top: 10px;
+    left: 25px;
+    .letra-recurso {
+      background-color: $brand-gray-dark;
+      color: $brand-white;
+      margin-left: -6px;
+      padding-bottom: 2px;
+      padding-right: 5px;
+      @include opacity(0);
+      @include transition(.3s all linear);
+    }
+  }
+  .free {
+    .letra-recurso {
+      padding-left: 5px;
+    }
+    &:hover {
+      .tipo-recurso {
+        .letra-recurso {
+          @include opacity(1);
+        }
+      }
+    }
+  }
+  .premium {
+    .tipo-recurso {
+      top: 0;
+      .fa {
+        color: gold;
+        background-color: $brand-gray-dark;
+        padding: 10px;
+      }
+    }
+    &:hover {
+      .tipo-recurso {
+        .letra-recurso {
+          @include opacity(1);
+        }
+      }
+    }
+  }
+}

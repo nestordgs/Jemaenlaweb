@@ -1,4 +1,4 @@
-@include('partials.title-blog')
+@include('partials.blog.title-blog')
 <div class="container">
   <div class="row pad-top-15 pad-btn-15">
     <div class="col-xs-12 pad-btn-15">

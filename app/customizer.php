@@ -772,6 +772,46 @@ function customize_register( $wp_customize ) {
 				'label'    => __( 'Titulo Pagina de Servicios', 'textdomain' ),
 			)
 		);
+	/**
+	 * Panel Academy Page
+	 */
+	$wp_customize->add_panel(
+		'theme_options_4', array(
+			'priority'       => 3,
+			'capability'     => 'edit_theme_options',
+			'theme_supports' => '',
+			'title'          => __( 'Academia', 'sage' ),
+			'description'    => __( 'Several settings pertaining my theme', 'sage' ),
+		)
+	);
+
+		$wp_customize->add_section(
+			'header_academy_page', array(
+				'title'    => __( 'Header', 'theme' ),
+				'priority' => 1,
+				'panel'    => 'theme_options_4'
+			)
+		);
+		/**
+		 * Titulo del Sitio
+		 */
+		$wp_customize->add_setting(
+			'title_academy', array(
+				'default'           => '',
+				'type'              => 'theme_mod',
+				'capability'        => 'edit_theme_options',
+				'transport'         => '',
+				'sanitize_callback' => 'esc_textarea',
+			)
+		);
+		$wp_customize->add_control(
+			'title_academy', array(
+				'type'     => 'text',
+				'priority' => 0,
+				'section'  => 'header_academy_page',
+				'label'    => __( 'Titulo Pagina de Academia', 'textdomain' ),
+			)
+		);
 }
 
 add_action( 'customize_register', __NAMESPACE__ . '\\customize_register' );
