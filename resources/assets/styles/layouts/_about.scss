@@ -1,0 +1,210 @@
+.sobre-mi {
+  section {
+    &.bg-about {
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: auto;
+    }
+    &.mobile {
+      > div {
+        height: 500px;
+      }
+    }
+    &.desktop {
+      > .element-container {
+        -webkit-box-align: end;
+        -webkit-align-items: flex-end;
+        -ms-flex-align: end;
+        align-items: flex-end;
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        margin-right: auto;
+        margin-left: auto;
+        position: relative;
+        @media (min-width: $screen-md) {
+          height: 500px;
+        }
+        > .element-row {
+          width: 100%;
+          display: flex;
+          > .element-column {
+            width: 100%;
+            position: relative;
+            min-height: 1px;
+            display: -webkit-box;
+            display: -webkit-flex;
+            display: -ms-flexbox;
+            display: flex;
+            @media (min-width: $screen-md) {
+              width: 47.726%;
+            }
+            > .element-populated {
+              background-color: white;
+              transition: background 0.3s, border 0.3s, border-radius 0.3s, box-shadow 0.3s;
+              width: 100%;
+              position: relative;
+              padding: 20px 0 20px 0;
+              @media (min-width: $screen-md) {
+                padding-top: 40px;
+              }
+              > div {
+                width: 100%;
+                position: relative;
+                > section {
+                  transition: background 0.3s, border 0.3s, border-radius 0.3s, box-shadow 0.3s;
+                  position: relative;
+                  > div {
+                    max-width: 400px;
+                    display: -webkit-box;
+                    display: -webkit-flex;
+                    display: -ms-flexbox;
+                    display: flex;
+                    position: relative;
+                    margin: 0 auto;
+                    @media (min-width: $screen-md) {
+                      margin: 0 0 0 auto !important;
+                    }
+                    > div {
+                      padding: 20px 10px 90px 10px;
+                      // background-image: url('http://jema.loc/wp-content/uploads/2017/10/otra.png');
+                      // background-image: url('/wp-content/uploads/2017/10/otra.png');
+                      background-image: url('/wp-content/themes/sage-9/dist/images/otra.png');
+                      background-position: bottom right;
+                      background-repeat: no-repeat;
+                      background-size: 95%;
+                      transition: background 0.3s, border 0.3s, border-radius 0.3s, box-shadow 0.3s;
+                      margin-right: 0;
+                      @media (min-width: $screen-md) {
+                        margin: 0 60px 0 0;
+                      }
+                      > .header-text {
+                        transform: rotate3d(0, 0, 1, 5deg)translateX(10px);
+                        padding: 0 70px 0 80px;
+                        @media (min-width: $screen-md) {
+                          padding: 0 50px 0 50px;
+                          transform: rotate3d(0, 0, 1, 5deg)translateX(15px);
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  .frase-2 {
+    .bineta {
+      padding: 20px 20px 90px 20px;
+      // background: url(http://jema.loc/wp-content/uploads/2017/10/otra-2.png) no-repeat bottom center;
+      // background: url('/wp-content/uploads/2017/10/otra-2.png') no-repeat bottom center;
+      background: url('/wp-content/themes/sage-9/dist/images/otra-2.png') no-repeat bottom center;
+      // /wp-content/themes/sage-9/dist/images/aboutme-bg.png
+      background-size: 80%;
+      transition: background 0.3s, border 0.3s, border-radius 0.3s, box-shadow 0.3s;
+      margin-right: 0;
+      @media (min-width: $screen-xs-max) and (max-width: $screen-sm-max) {
+        background-size: 60%;
+        position: absolute;
+        top: 10px;
+        left: 10px;
+      }
+      @media (min-width: $screen-sm) {
+        background-size: 40%;
+        background-position: center 80%;
+      }
+      @media (min-width: 1024px) {
+        position: absolute;
+        top: 10px;
+        background-size: 60%;
+        background-position: center bottom;
+      }
+      .frase {
+        padding: 0 50px;
+      }
+    }
+  }
+}
+.bg-block {
+  position: relative;
+  display: inline-flex;
+  top: 0;
+  animation: all .5s linear;
+  &.bg-green {
+    width: 130%;
+    height: 270px;
+    transform: rotate3d(0, 0, 1, -5deg);
+    background-color: #e1fae3;
+    left: -150px;
+  }
+  &.bg-blue {
+    width: 50%;
+    background-color: #cee6ef;
+    left: calc(50% - 25%);
+    transform: rotate3d(0, 0, 1, 5deg);
+    z-index: -1;
+    height: 200px;
+    @media (min-width: $screen-xs) {
+      max-width: 220px;
+    }
+    @media (min-width: $screen-sm) {
+      height: 240px;
+    }
+    @media (min-width: $screen-md) {
+      height: 350px;
+    }
+    @media (min-width: 1024px) {
+      left: 29%;
+    }
+    @media (min-width: $screen-lg) {
+      left: 35%;
+    }
+  }
+}
+.person-block {
+  position: relative;
+  top: 0;
+  display: inline-block;
+  left: -14%;
+  animation: all .5s linear;
+  @media (min-width: $screen-xs) {
+    left: -10%;
+  }
+  @media (min-width: $screen-sm) {
+    left: -15%;
+  }
+  @media (min-width: $screen-md) {
+    left: -19%;
+  }
+  @media (min-width: 1024px) {
+    left: -15%;
+  }
+  @media (min-width: $screen-lg) {
+    left: 0;
+  }
+  > .img-person {
+    max-width: 130px;
+    animation: all .5s linear;
+    @media (min-width: $screen-xs) {
+      max-width: 150px;
+    }
+    @media (min-width: $screen-sm) {
+      max-width: 160px;
+    }
+    @media (min-width: $screen-md) {
+      max-width: 230px;
+    }
+  }
+}
+.fadeIn {
+  opacity: 0;
+  &.left {
+    //left: 50px;
+    @include translate(0,50px)
+  }
+  animation: all .5s linear;
+}

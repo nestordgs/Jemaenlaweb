@@ -271,7 +271,7 @@ function customize_register( $wp_customize ) {
 				'priority' => 0,
 				'section'  => 'about_home_page',
 				'label'    => __( 'Texto Sobre Mi', 'textdomain' ),
-				'description' => __('Se puede utilizar el caracter "|"(pipe) para realizar saltos de linea'),
+				'description' => __( 'Colocar texto en Negrita *Texto*.<br> Colocar texto en Cursiva _Texto_.' )
 			)
 		);
 		/**
@@ -332,7 +332,7 @@ function customize_register( $wp_customize ) {
 				'priority' => 3,
 				'section'  => 'about_home_page',
 				'label'    => __( 'Texto Servicio 1', 'textdomain' ),
-				'description' => __('Se puede utilizar el caracter "|"(pipe) para realizar saltos de linea'),
+				'description' => __( 'Colocar texto en Negrita *Texto*.<br> Colocar texto en Cursiva _Texto_.' )
 			)
 		);
 		/**
@@ -370,7 +370,7 @@ function customize_register( $wp_customize ) {
 				'priority' => 3,
 				'section'  => 'about_home_page',
 				'label'    => __( 'Texto Servicio 2', 'textdomain' ),
-				'description' => __('Se puede utilizar el caracter "|"(pipe) para realizar saltos de linea'),
+				'description' => __( 'Colocar texto en Negrita *Texto*.<br> Colocar texto en Cursiva _Texto_.' )
 			)
 		);
 		/**
@@ -408,7 +408,7 @@ function customize_register( $wp_customize ) {
 				'priority' => 3,
 				'section'  => 'about_home_page',
 				'label'    => __( 'Texto Servicio 3', 'textdomain' ),
-				'description' => __('Se puede utilizar el caracter "|"(pipe) para realizar saltos de linea'),
+				'description' => __( 'Colocar texto en Negrita *Texto*.<br> Colocar texto en Cursiva _Texto_.' )
 			)
 		);
 	/**
@@ -812,6 +812,212 @@ function customize_register( $wp_customize ) {
 				'label'    => __( 'Titulo Pagina de Academia', 'textdomain' ),
 			)
 		);
+	/**
+	 * Panel About-Me Page
+	 */
+	$wp_customize->add_panel(
+		'theme_options_5', array(
+			'priority'       => 3,
+			'capability'     => 'edit_theme_options',
+			'theme_supports' => '',
+			'title'          => __( 'Sobre Mi', 'sage' ),
+			'description'    => __( 'Several settings pertaining my theme', 'sage' ),
+		)
+	);
+		$wp_customize->add_section(
+			'header_about_page', array(
+				'title'    => __( 'Header', 'theme' ),
+				'priority' => 1,
+				'panel'    => 'theme_options_5'
+			)
+		);
+		/**
+		 * Titulo del Sitio
+		 */
+		$wp_customize->add_setting(
+			'title_about', array(
+				'default'           => '',
+				'type'              => 'theme_mod',
+				'capability'        => 'edit_theme_options',
+				'transport'         => '',
+				'sanitize_callback' => 'esc_textarea',
+			)
+		);
+		$wp_customize->add_control(
+			'title_about', array(
+				'type'     => 'text',
+				'priority' => 0,
+				'section'  => 'header_about_page',
+				'label'    => __( 'Titulo Pagina Sobre Mi', 'textdomain' ),
+			)
+		);
+
+		$wp_customize->add_section(
+			'content_about_page', array(
+				'title'    => __( 'Content', 'theme' ),
+				'priority' => 1,
+				'panel'    => 'theme_options_5'
+			)
+		);
+		/**
+		 * Background Header
+		 */
+		$wp_customize->add_setting(
+			'background_image_about', array(
+				'default-image'     => '',
+				'sanitize_callback' => 'esc_url_raw',
+			)
+		);
+		$wp_customize->add_control(
+			new \WP_Customize_Image_Control(
+				$wp_customize,
+				'background_image_about', array(
+					'label'       => __( 'Select an Background', 'theme' ),
+					'description' => __( 'Recomendación: Cargar la imagen del logo sin fondo para que este no interfiera con el background de la pagina', 'theme' ),
+					'type'        => 'image',
+					'section'     => 'content_about_page',
+					'priority'    => 0
+				)
+			)
+		);
+		/**
+		 * Text About-Me 1
+		 */
+		$wp_customize->add_setting(
+			'paragraph_0', array(
+				'default'           => '',
+				'type'              => 'theme_mod',
+				'capability'        => 'edit_theme_options',
+				'transport'         => '',
+				'sanitize_callback' => 'esc_textarea',
+			)
+		);
+		$wp_customize->add_control(
+			'paragraph_0', array(
+				'type'        => 'textarea',
+				'priority'    => 1,
+				'section'     => 'content_about_page',
+				'label'       => __( 'Ingrese el Texto', 'textdomain' ),
+				'description' => __( 'Colocar texto en Negrita *Texto*.<br> Colocar texto en Cursiva _Texto_.' )
+			)
+		);
+		/**
+		 * Text About-Me 2
+		 */
+		$wp_customize->add_setting(
+			'paragraph_1', array(
+				'capability' => 'edit_theme_options',
+				'default' => '',
+			)
+		);
+
+		$wp_customize->add_control(
+			'paragraph_1', array(
+				'type'        => 'textarea',
+				'section'     => 'content_about_page',
+				'priority'    => 2,
+				'label'       => __( 'Ingrese el texto' ),
+				'description' => __( 'Colocar texto en Negrita *Texto*.<br> Colocar texto en Cursiva _Texto_.' )
+			)
+		);
+		/**
+		 * Text About-Me 3
+		 */
+		$wp_customize->add_setting(
+			'my_formula', array(
+				'capability' => 'edit_theme_options',
+				'default' => '',
+			)
+		);
+
+		$wp_customize->add_control(
+			'my_formula', array(
+				'type'        => 'text',
+				'section'     => 'content_about_page',
+				'priority'    => 3,
+				'label'       => __( 'Mi Formula' ),
+			)
+		);
+		/**
+		 * Text About-Me 4
+		 */
+		$wp_customize->add_setting(
+			'paragraph_3', array(
+				'capability' => 'edit_theme_options',
+				'default' => '',
+			)
+		);
+
+		$wp_customize->add_control(
+			'paragraph_3', array(
+				'type'        => 'textarea',
+				'section'     => 'content_about_page',
+				'priority'    => 4,
+				'label'       => __( 'Ingrese el texto' ),
+				'description' => __( 'Colocar texto en Negrita *Texto*.<br> Colocar texto en Cursiva _Texto_.' )
+			)
+		);
+		/**
+		 * Text About-Me 5
+		 */
+		$wp_customize->add_setting(
+			'paragraph_4', array(
+				'capability' => 'edit_theme_options',
+				'default' => '',
+			)
+		);
+
+		$wp_customize->add_control(
+			'paragraph_4', array(
+				'type'        => 'textarea',
+				'section'     => 'content_about_page',
+				'priority'    => 5,
+				'label'       => __( 'Ingrese el texto' ),
+				'description' => __( 'Colocar texto en Negrita *Texto*.<br> Colocar texto en Cursiva _Texto_.' )
+			)
+		);
+		/**
+		 * Text About-Me 6
+		 */
+		$wp_customize->add_setting(
+			'paragraph_5', array(
+				'capability' => 'edit_theme_options',
+				'default' => '',
+			)
+		);
+
+		$wp_customize->add_control(
+			'paragraph_5', array(
+				'type'        => 'textarea',
+				'section'     => 'content_about_page',
+				'priority'    => 6,
+				'label'       => __( '¿Cómo aterricé aqui?' ),
+				'description' => __( 'Colocar texto en Negrita *Texto*.<br> Colocar texto en Cursiva _Texto_.' )
+			)
+		);
+
+		/**
+		 * Image JeanMary
+		 */
+		$wp_customize->add_setting(
+			'personal_image', array(
+				'default-image'     => '',
+				'sanitize_callback' => 'esc_url_raw',
+			)
+		);
+		$wp_customize->add_control(
+			new \WP_Customize_Image_Control(
+				$wp_customize,
+				'personal_image', array(
+					'label'       => __( 'Seleccione una imagen', 'theme' ),
+					'description' => __( 'Recomendación: Cargar la imagen sin fondo para que este no interfiera con el background de la pagina', 'theme' ),
+					'type'        => 'image',
+					'section'     => 'content_about_page',
+					'priority'    => 10,
+				)
+			)
+		);
+
 }
 
 add_action( 'customize_register', __NAMESPACE__ . '\\customize_register' );
