@@ -1,6 +1,7 @@
 {{--
     Created by Nestor on 7/30/2017.
-    Template Name: Services
+    Template Name: Servicios
+    Services
 --}}
 @php
     $paged = ( get_query_var('paged') ) ? absint( get_query_var( 'paged' ) ) : 1;
@@ -8,8 +9,9 @@
     $i=0;
 
     // WP_Query arguments
+    // services
     $args = array(
-        'post_type' => array( 'academy' ),
+        'post_type' => array( 'testimony' ),
         'nopaging'               => false,
         'posts_per_page'         => '12',
         'paged'                  => $paged
@@ -27,8 +29,11 @@
 @endphp
 @extends('layouts.app')
 @section('content')
-    @include('partials.services.title-services')
-    <div class="container">
+  @include('partials.services.title-services')
+  <div class="grid-services">
+    @while($query->have_posts())
+      @php($query->the_post())
         @include('partials.services.grid')
-    </div>
+    @endwhile
+  </div>
 @endsection
