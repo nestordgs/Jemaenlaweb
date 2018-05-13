@@ -28,7 +28,7 @@
                          data-slick='{"draggable": {{ (get_theme_mod('draggable') != 1) ? 'false' : 'true' }},
                                       "autoplaySpeed": {{ get_theme_mod('autoplaySpeed') }},
                                       "slidesToShow": {{ get_theme_mod('slidesToShow') }},
-                                      "slidesToScroll": {{ (get_theme_mod('slidesToScroll') > get_theme_mod('slidesToShow')) ? get_theme_mod('slidesToShow') : get_theme_mod('slidesToScroll') }}}'>
+                                      "slidesToScroll": 1}'>
                         @while($query->have_posts())
                             @php($query->the_post())
                             <figure class="slick-figure">

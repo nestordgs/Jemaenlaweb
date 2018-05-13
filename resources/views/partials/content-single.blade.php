@@ -11,7 +11,7 @@
         ));
       @endphp
     </div>
-    <div class="col-xs-12 col-sm-8">
+    <div class="col-xs-12">
       {{ the_post_thumbnail('' , array('class' => 'img-responsive center-block')) }}
     </div>
   </div>

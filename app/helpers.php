@@ -165,3 +165,11 @@ function isPremium($post_id) {
     }
     return false;
 }
+
+function styleTextArea($string) {
+
+	$string = preg_replace('/\*(.*?)\*/', '<strong>$1</strong>', $string);
+	$string = preg_replace('/_(.*?)_/', '<i>$1</i>', $string);
+
+	return $string;
+}
