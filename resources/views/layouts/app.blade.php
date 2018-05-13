@@ -6,11 +6,11 @@
     @include('partials.header')
     <div class="" role="document">
           @yield('content')
-        @if (App\display_sidebar())
+        {{--@if (App\display_sidebar())
           <aside class="sidebar">
             @include('partials.sidebar')
           </aside>
-        @endif
+        @endif--}}
     </div>
     @php(do_action('get_footer'))
     @include('partials.footer')
