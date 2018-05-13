@@ -1,3 +1,4 @@
+<!--Single-->
 @extends('layouts.app')
 
 @section('content')

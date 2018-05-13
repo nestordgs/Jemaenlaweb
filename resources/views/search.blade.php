@@ -1,3 +1,4 @@
+<!--Search-->
 @extends('layouts.app')
 
 @section('content')
