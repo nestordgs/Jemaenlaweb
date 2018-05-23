@@ -13,7 +13,9 @@
         </p>
         @if(get_post_meta( $post_id, 'formurl_service', true ))
           <p class="text-left">
-            <a href="{{ get_post_meta( $post_id, 'formurl_service', true ) }}" class="btn btn-purple btn-sm" target="_blank">¡Conversemos!</a>
+            <a href="{{ get_post_meta( $post_id, 'formurl_service', true ) }}" class="btn btn-purple btn-sm" target="_blank">
+              {{ ( get_post_meta( $post_id, 'txtBtn_service', true ) ) ? get_post_meta( $post_id, 'txtBtn_service', true ) : '¡Conversemos!' }}
+            </a>
           </p>
         @endif
       </div>

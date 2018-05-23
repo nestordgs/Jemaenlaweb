@@ -11,7 +11,7 @@
     // WP_Query arguments
     // services
     $args = array(
-        'post_type' => array( 'testimony' ),
+        'post_type' => array( 'services' ),
         'nopaging'               => false,
         'posts_per_page'         => '12',
         'paged'                  => $paged

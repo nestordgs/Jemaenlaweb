@@ -10,3 +10,5 @@ vendor
 CHANGELOG\.md
 
 \.idea/
+*.zip
+*.rar
