@@ -68,8 +68,6 @@
                     }
                     > div {
                       padding: 20px 10px 90px 10px;
-                      // background-image: url('http://jema.loc/wp-content/uploads/2017/10/otra.png');
-                      // background-image: url('/wp-content/uploads/2017/10/otra.png');
                       background-image: url('/wp-content/themes/sage-9/dist/images/otra.png');
                       background-position: bottom right;
                       background-repeat: no-repeat;
@@ -100,10 +98,7 @@
   .frase-2 {
     .bineta {
       padding: 20px 20px 90px 20px;
-      // background: url(http://jema.loc/wp-content/uploads/2017/10/otra-2.png) no-repeat bottom center;
-      // background: url('/wp-content/uploads/2017/10/otra-2.png') no-repeat bottom center;
       background: url('/wp-content/themes/sage-9/dist/images/otra-2.png') no-repeat bottom center;
-      // /wp-content/themes/sage-9/dist/images/aboutme-bg.png
       background-size: 80%;
       transition: background 0.3s, border 0.3s, border-radius 0.3s, box-shadow 0.3s;
       margin-right: 0;
@@ -125,6 +120,9 @@
       }
       .frase {
         padding: 0 50px;
+        @media (min-width: $screen-sm) {
+          padding: 0 70px;
+        }
       }
     }
   }
@@ -203,7 +201,6 @@
 .fadeIn {
   opacity: 0;
   &.left {
-    //left: 50px;
     @include translate(0,50px)
   }
   animation: all .5s linear;

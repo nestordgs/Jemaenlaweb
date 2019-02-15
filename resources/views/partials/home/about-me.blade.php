@@ -1,5 +1,5 @@
 {{-- Created by Nestor on 6/22/2017. --}}
-<div class="about-me-bg pad-top-15" id="sobreMi">
+<div class="pad-top-15" id="sobreMi">
   <div class="container">
     <div class="row vertical-align pad-top-15">
       <div class="col-xs-12 col-sm-6">
@@ -7,13 +7,13 @@
           <h1 class="text-gray-dark text-center">
               {{ esc_attr(get_theme_mod('name_about')) }}
           </h1>
-          <p class="text-gray text-justify">
+          <p class="text-gray">
             {!! App\styleTextArea(nl2br(get_theme_mod('text_about'))) !!}
           </p>
         </div>
       </div>
       <div class="col-xs-12 col-sm-6">
-        <img src="{{ esc_url(get_theme_mod('site_icon')) }}" alt="{{ esc_attr(get_bloginfo('name')) }}" class="img-responsive center-block">
+        <img src="{{ esc_url(get_theme_mod('about_me_site_icon')) }}" alt="{{ esc_attr(get_bloginfo('name')) }}" class="img-responsive center-block">
       </div>
     </div>
   </div>

@@ -90,7 +90,27 @@ if (!function_exists( 'jema_theme_features')) {
 
 function customize_register( $wp_customize ) {
 
-//	$wp_customize->get_setting('blogname')->transport = 'postMessage';
+    /**
+	 * Meta description
+	 */
+	$wp_customize->add_setting(
+		'meta_description', array(
+			'default'           => '',
+			'type'              => 'theme_mod',
+			'capability'        => 'edit_theme_options',
+			'transport'         => '',
+			'sanitize_callback' => 'esc_textarea',
+		)
+	);
+
+    $wp_customize->add_control(
+		'meta_description', array(
+			'type'        => 'textarea',
+			'section'     => 'title_tagline',
+			'priority'    => 1,
+			'label'       => __( 'Meta Descripcion' ),
+		)
+    );
 
 	$wp_customize->add_section(
 		'logo_header', array(
@@ -157,7 +177,7 @@ function customize_register( $wp_customize ) {
 		'type'     => 'text',
 		'priority' => 0,
 		'section'  => 'header_home_page',
-		'label'    => __( 'Site Title', 'textdomain' ),
+		'label'    => __( 'Título del sitio', 'textdomain' ),
 		)
 	);
 	/**
@@ -174,7 +194,7 @@ function customize_register( $wp_customize ) {
 		new \WP_Customize_Image_Control(
 			$wp_customize,
 			'background_image', array(
-				'label'       => __( 'Select an Background', 'theme' ),
+				'label'       => __( 'Seleccione un Fondo', 'theme' ),
 				'description' => __( 'Recomendación: Cargar la imagen del logo sin fondo para que este no interfiera con el background de la pagina', 'theme' ),
 				'type'        => 'image',
 				'section'     => 'header_home_page',
@@ -196,7 +216,7 @@ function customize_register( $wp_customize ) {
 			$wp_customize,
 			'logo_header',
 			array(
-				'label'       => __( 'Select an Logo', 'theme' ),
+				'label'       => __( 'Seleccione un Logo', 'theme' ),
 				'description' => __( 'Recomendación: Cargar la imagen del logo sin fondo para que este no interfiera con el background de la pagina', 'theme' ),
 				'type'        => 'image',
 				'section'     => 'header_home_page',
@@ -278,7 +298,7 @@ function customize_register( $wp_customize ) {
 		 * About image
 		 */
 		$wp_customize->add_setting(
-			'site_icon',
+			'about_me_site_icon',
 			array(
 				'default-image'     => '',
 				'sanitize_callback' => 'esc_url_raw',
@@ -287,7 +307,7 @@ function customize_register( $wp_customize ) {
 		$wp_customize->add_control(
 			new \WP_Customize_Image_Control(
 				$wp_customize,
-				'site_icon',
+				'about_me_site_icon',
 				array(
 					'label'       => __( 'Imagen "Sobre Mi', 'theme' ),
 					'description' => __( 'Imagen de tablet en seccion Sobre Mi', 'theme' ),
@@ -580,7 +600,7 @@ function customize_register( $wp_customize ) {
 					'priority' => 0,
 				)
 			);
-	
+
 	/**
 	 * Panel Blog Page
 	 */
@@ -872,7 +892,7 @@ function customize_register( $wp_customize ) {
 			new \WP_Customize_Image_Control(
 				$wp_customize,
 				'background_image_about', array(
-					'label'       => __( 'Select an Background', 'theme' ),
+					'label'       => __( 'Seleccione un Fondo', 'theme' ),
 					'description' => __( 'Recomendación: Cargar la imagen del logo sin fondo para que este no interfiera con el background de la pagina', 'theme' ),
 					'type'        => 'image',
 					'section'     => 'content_about_page',
@@ -1021,3 +1041,15 @@ function customize_register( $wp_customize ) {
 }
 
 add_action( 'customize_register', __NAMESPACE__ . '\\customize_register' );
+
+function hook_metaData() {
+    ?>
+        <meta name="description" content="<?php echo get_theme_mod('meta_description') ?>">
+        <meta name="twitter:title" content="<?php echo bloginfo( 'name' ) ?>">
+        <meta property="twitter:description" content="<?php echo get_theme_mod('meta_description') ?>">
+        <meta property="og:title" content="<?php echo bloginfo( 'name' ) ?>">
+        <meta property="og:description" content="<?php echo get_theme_mod('meta_description') ?>">
+    <?php
+}
+
+add_action('wp_head',  __NAMESPACE__ . '\\hook_metaData', 1);
