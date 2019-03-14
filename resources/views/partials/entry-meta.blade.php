@@ -23,7 +23,7 @@
     <div class="entry-author single">
         <i class="fa fa-file-text-o text-gray-dark"></i>
         <span class="text-gray-dark">
-        Post autor invitado
+        Post autor:
       </span>
       <a href="{{ get_author_posts_url(get_the_author_meta('ID')) }}" rel="author">
         <strong>
